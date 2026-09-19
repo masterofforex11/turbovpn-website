@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboVPN | VPN، آموزش، امنیت و اتصال سریع</title>
+    <meta name="description" content="TurboVPN؛ معرفی VPNهای پرسرعت و تست‌شده، آموزش اتصال برای Android، iPhone و Windows و جدیدترین مطالب امنیت و دسترسی پایدار به اینترنت.">
+    <meta name="keywords" content="TurboVPN, VPN, دانلود وی پی ان, آموزش VPN, امنیت اینترنت, فیلترشکن پرسرعت, وب پروکسی">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://t.me/turbovpn10">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t.me/turbovpn10">
+    <meta property="og:title" content="TurboVPN | اتصال سریع، امن و بدون محدودیت">
+    <meta property="og:description" content="معرفی VPNهای پرسرعت و تست‌شده، آموزش اتصال و جدیدترین ابزارهای دسترسی پایدار به اینترنت.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TurboVPN | اتصال سریع و امن">
+    <meta name="twitter:description" content="مرجع ابزارها و آموزش‌های دسترسی آزاد به اینترنت">
+
+    <!-- Google Fonts: Vazirmatn & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            base: '#060913',
+                            surface: '#0d1322',
+                            card: '#131c31',
+                            border: '#1f2d4d'
+                        },
+                        cyber: {
+                            cyan: '#00f0ff',
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e'
+                        }
+                    },
+                    fontFamily: {
+                        vazir: ['Vazirmatn', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'radar': 'radar 8s linear infinite'
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.4, transform: 'scale(1)' },
+                            '50%': { opacity: 0.8, transform: 'scale(1.05)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        radar: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Global Styles & Custom Glassmorphism -->
+    <style>
+        body {
+            background-color: #060913;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(19, 28, 49, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 240, 255, 0.12);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.35);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+        }
+        .glass-nav {
+            background: rgba(6, 9, 19, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-text-cyan {
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+        }
+        .glow-box-cyan {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060913;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2d4d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+    </style>
+
+    <!-- React 18 & Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TurboVPN",
+      "url": "https://t.me/turbovpn10",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://t.me/turbovpn10?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "مرجع تخصصی آموزش اتصال، امنیت شبکه و ابزارهای VPN"
+    }
+    </script>
+</head>
+<body class="selection:bg-cyber-cyan selection:text-black">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useMemo } = React;
+
+        // --- MOCK DATABASE / INITIAL EDITABLE DATA ---
+        const INITIAL_POSTS = [
+            {
+                id: 1,
+                title: "آموزش کانفیگ پیکربندی v2rayNG در اندروید",
+                titleEn: "v2rayNG Configuration Guide on Android",
+                category: "آموزش",
+                categoryEn: "Tutorials",
+                date: "۱۴۰۲/۱۲/۲۰",
+                desc: "راهنمای قدم به قدم اتصال سریع و رفع خطای عدم دریافت پینگ در اپلیکیشن v2rayNG.",
+                descEn: "Step-by-step guide to quick connection and fixing timeout errors in v2rayNG app.",
+                telegramUrl: "https://t.me/turbovpn10",
+                views: "2.4K"
+            },
+            {
+                id: 2,
+                title: "بررسی اختصاصی پروتکل جدید ShadowTLS 2026",
+                titleEn: "Exclusive Review of ShadowTLS 2026 Protocol",
+                category: "امنیت",
+                categoryEn: "Security",
+                date: "۱۴۰۲/۱۲/۱۸",
+                desc: "چگونه پروتکل‌های نسل جدید پایداری اتصال را در شرایط اختلال شدید تضمین می‌کنند؟",
+                descEn: "How next-gen protocols guarantee connection stability during severe throttling.",
+                telegramUrl: "https://t.me/turbovpn10",
+                views: "3.1K"
+            },
+            {
+                id: 3,
+                title: "راهنمای نصب Sing-Box در سیستم عامل آیفون (iOS)",
+                titleEn: "Sing-Box Setup Guide for iOS Devices",
+                category: "آیفون",
+                categoryEn: "iPhone",
+                date: "۱۴۰۲/۱۲/۱۵",
+                desc: "بهترین جایگزین برای Shadowrocket با پشتیبانی از تمامی ساب‌اسکریپشن‌های مدرن.",
+                descEn: "The best alternative for Shadowrocket with support for modern subscriptions.",
+                telegramUrl: "https://t.me/turbovpn10",
+                views: "4.8K"
+            }
+        ];
+
+        const INITIAL_TUTORIALS = [
+            {
+                id: 'tut-1',
+                titleFa: 'راهنمای جامع اتصال در Android',
+                titleEn: 'Comprehensive Android Connection Guide',
+                platform: 'android',
+                readTime: '۵ دقیقه',
+                readTimeEn: '5 mins',
+                difficulty: 'ساده',
+                difficultyEn: 'Easy',
+                stepsFa: [
+                    'نرم‌افزار v2rayNG یا MahsaNG را از گوگل پلی دانلود کنید.',
+                    'کد یا کلید اختصاصی دریافت شده از کانال تلگرام را کپی کنید.',
+                    'روی علامت + بالای برنامه کلیک کرده و گزینه Import from Clipboard را بزنید.',
+                    'تست پینگ بگیرید و روی دکمه اتصال کلیک کنید.'
+                ],
+                stepsEn: [
+                    'Download v2rayNG or MahsaNG from Google Play.',
+                    'Copy the configuration key from our Telegram channel.',
+                    'Tap the + icon at the top and select "Import from Clipboard".',
+                    'Run a ping test and press the Connect button.'
+                ]
+            },
+            {
+                id: 'tut-2',
+                titleFa: 'نحوه پیکربندی Hiddify Next در آیفون',
+                titleEn: 'How to Configure Hiddify Next on iPhone',
+                platform: 'iphone',
+                readTime: '۴ دقیقه',
+                readTimeEn: '4 mins',
+                difficulty: 'متوسط',
+                difficultyEn: 'Medium',
+                stepsFa: [
+                    'برنامه Hiddify Next را از App Store دانلود کنید.',
+                    'لینک ساب‌اسکریپشن دریافت شده را کپی نمایید.',
+                    'وارد برنامه شوید، گزینه افزودن ساب‌اسکریپشن را انتخاب و لینک را پیست کنید.',
+                    'با لمس دکمه دایره‌ای مرکزی متصل شوید.'
+                ],
+                stepsEn: [
+                    'Download Hiddify Next from the App Store.',
+                    'Copy your provided subscription link.',
+                    'Open app, tap Add Subscription, and paste the URL.',
+                    'Tap the main center button to establish connection.'
+                ]
+            },
+            {
+                id: 'tut-3',
+                titleFa: 'راهنمای تنظیم v2rayN در Windows',
+                titleEn: 'v2rayN Setup Guide for Windows',
+                platform: 'windows',
+                readTime: '۶ دقیقه',
+                readTimeEn: '6 mins',
+                difficulty: 'متوسط',
+                difficultyEn: 'Medium',
+                stepsFa: [
+                    'نسخه zip نرم‌افزار v2rayN را استخراج کرده و اجرا نمایید.',
+                    'لینک کانفیگ را از کلیپ‌بورد کپی کنید.',
+                    'کلید ترکیبی Ctrl+V را در محیط برنامه بفشارید.',
+                    'حالت System Proxy را روی Set system proxy قرار دهید.'
+                ],
+                stepsEn: [
+                    'Extract and launch the v2rayN zip package.',
+                    'Copy configuration details to clipboard.',
+                    'Press Ctrl+V inside the main window.',
+                    'Set System Proxy mode to "Set system proxy".'
+                ]
+            }
+        ];
+
+        const INITIAL_VPNS = [
+            {
+                id: 'vpn-1',
+                name: 'V2Ray / Xray Protocol',
+                platforms: ['Android', 'iOS', 'Windows', 'Mac'],
+                status: 'تست شده',
+                statusEn: 'Tested',
+                statusColor: 'emerald',
+                speedRating: '۹۸٪',
+                stabilityRating: '۹۶٪',
+                securityRating: '۹۹٪',
+                lastTested: 'امروز',
+                lastTestedEn: 'Today',
+                descFa: 'برترین پروتکل جهت عبور از محدودیت‌های شدید با انکریپشن پیشرفته.',
+                descEn: 'Top-tier protocol for bypassing restrictions with advanced encryption.'
+            },
+            {
+                id: 'vpn-2',
+                name: 'WireGuard Kernel',
+                platforms: ['Android', 'Windows', 'Linux'],
+                status: 'نیازمند بررسی',
+                statusEn: 'Needs Review',
+                statusColor: 'amber',
+                speedRating: '۹۹٪',
+                stabilityRating: '۸۵٪',
+                securityRating: '۹۵٪',
+                lastTested: '۲ روز پیش',
+                lastTestedEn: '2 days ago',
+                descFa: 'پروتکل فوق‌العاده سریع با مصرف شارژ بهینه برای گیمینگ و استریم.',
+                descEn: 'Ultra-fast lightweight protocol optimized for low latency and gaming.'
+            },
+            {
+                id: 'vpn-3',
+                name: 'OpenVPN Custom TLS',
+                platforms: ['Android', 'iOS', 'Windows'],
+                status: 'در حال بروزرسانی',
+                statusEn: 'Updating',
+                statusColor: 'rose',
+                speedRating: '۹۰٪',
+                stabilityRating: '۹۲٪',
+                securityRating: '۱۰۰٪',
+                lastTested: 'دیروز',
+                lastTestedEn: 'Yesterday',
+                descFa: 'پروتکل استاندارد امنیت سایبری با کلیدهای رمزنگاری RSA 4096.',
+                descEn: 'Cybersecurity standard protocol utilizing RSA 4096-bit encryption.'
+            }
+        ];
+
+        const TROUBLESHOOTING_ISSUES = [
+            {
+                id: 'p1',
+                problemFa: 'VPN وصل نمی‌شود',
+                problemEn: 'VPN fails to connect',
+                causeFa: 'احتمال انقضای کانفیگ، تغییر IP سرور یا مسدودی پورت.',
+                causeEn: 'Config expiration, server IP change, or port blocking.',
+                solutionFa: '۱. لینک ساب‌اسکریپشن را بروزرسانی کنید. ۲. DNS برنامه را روی Cloudflare (1.1.1.1) بگذارید. ۳. ساعت سیستم را روی حالت اتوماتیک بگذارید.',
+                solutionEn: '1. Update your subscription link. 2. Change app DNS to Cloudflare (1.1.1.1). 3. Set system clock to automatic.'
+            },
+            {
+                id: 'p2',
+                problemFa: 'اتصال مدام قطع می‌شود',
+                problemEn: 'Connection drops frequently',
+                causeFa: 'فعال بودن حالت مدیریت مصرف باتری در گوشی (Battery Saver).',
+                causeEn: 'Mobile battery optimization features closing the background app.',
+                solutionFa: 'در تنظیمات گوشی، به بخش Apps رفته و به برنامه VPN مجوز "No Restrictions" در مصرف باتری بدهید.',
+                solutionEn: 'Go to phone Settings > Apps > select VPN app > set Battery Saver to "Unrestricted".'
+            },
+            {
+                id: 'p3',
+                problemFa: 'سرعت دانلود بسیار پایین است',
+                problemEn: 'Download speed is low',
+                causeFa: 'ترافیک بالای گره سرور یا عدم تطابق MTU شبکه.',
+                causeEn: 'Server node congestion or network MTU mismatch.',
+                solutionFa: 'در نرم‌افزار متصل شده، سرور را تغییر دهید یا مقدار Fragment را در تنظیمات پیشرفته فعال کنید.',
+                solutionEn: 'Switch server node or enable the Fragment option in app advanced settings.'
+            },
+            {
+                id: 'p4',
+                problemFa: 'خطای DNS Timeout داده می‌شود',
+                problemEn: 'DNS Timeout Error',
+                causeFa: 'اختلال در پاسخگویی سرورهای اسم دامنه اپراتور.',
+                causeEn: 'ISP domain name resolution timeouts.',
+                solutionFa: 'تنظیمات DNS را در برنامه روی 8.8.8.8 و 1.1.1.1 تغییر دهید.',
+                solutionEn: 'Set custom DNS in application settings to 8.8.8.8 and 1.1.1.1.'
+            }
+        ];
+
+        // --- MAIN APP COMPONENT ---
+        function App() {
+            // Language & Dir State
+            const [lang, setLang] = useState('fa');
+            const isRtl = lang === 'fa';
+
+            // Global Content States (Editable via Admin)
+            const [posts, setPosts] = useState(INITIAL_POSTS);
+            const [tutorials, setTutorials] = useState(INITIAL_TUTORIALS);
+            const [vpns, setVpns] = useState(INITIAL_VPNS);
+            const [announcement, setAnnouncement] = useState({
+                enabled: true,
+                textFa: '🚀 جدیدترین آموزش‌ها و ابزارهای TurboVPN در کانال تلگرام منتشر شد!',
+                textEn: '🚀 Latest TurboVPN guides & tools released on Telegram channel!',
+                link: 'https://t.me/turbovpn10'
+            });
+
+            // Hero Text Editable State
+            const [heroConfig, setHeroConfig] = useState({
+                titleFa: '«TurboVPN؛ اتصال سریع، امن و بدون محدودیت»',
+                titleEn: 'TurboVPN: Fast, Secure & Unrestricted Connection',
+                subFa: 'معرفی VPNهای پرسرعت و تست‌شده، آموزش اتصال و جدیدترین ابزارهای دسترسی پایدار به اینترنت',
+                subEn: 'Introducing tested high-speed VPN tools, setup guides, and privacy tools.'
+            });
+
+            // Interactive Features States
+            const [searchQuery, setSearchQuery] = useState('');
+            const [selectedTutPlatform, setSelectedTutPlatform] = useState('all');
+            const [selectedTut, setSelectedTut] = useState(null);
+            const [activeProblem, setActiveProblem] = useState(TROUBLESHOOTING_ISSUES[0]);
+
+            // Speed Monitor Demo State
+            const [pingState, setPingState] = useState({ latency: 28, download: 84.5, upload: 32.1, status: 'CONNECTED' });
+            const [isTestingSpeed, setIsTestingSpeed] = useState(false);
+
+            // Admin Panel Modal State
+            const [adminOpen, setAdminOpen] = useState(false);
+            const [adminTab, setAdminTab] = useState('overview');
+            const [adminPass, setAdminPass] = useState('');
+            const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
+
+            // Live Ping Test Simulation
+            const runSpeedTest = () => {
+                setIsTestingSpeed(true);
+                setTimeout(() => {
+                    setPingState({
+                        latency: Math.floor(Math.random() * 20) + 18,
+                        download: (Math.random() * 40 + 70).toFixed(1),
+                        upload: (Math.random() * 20 + 25).toFixed(1),
+                        status: 'OPTIMAL'
+                    });
+                    setIsTestingSpeed(false);
+                }, 1200);
+            };
+
+            // Filter Tutorials based on platform and search
+            const filteredTutorials = useMemo(() => {
+                return tutorials.filter(item => {
+                    const matchesPlatform = selectedTutPlatform === 'all' || item.platform === selectedTutPlatform;
+                    const q = searchQuery.toLowerCase();
+                    const title = (isRtl ? item.titleFa : item.titleEn).toLowerCase();
+                    return matchesPlatform && title.includes(q);
+                });
+            }, [tutorials, selectedTutPlatform, searchQuery, isRtl]);
+
+            // Handle Admin Login
+            const handleAdminLogin = (e) => {
+                e.preventDefault();
+                if (adminPass === 'admin123' || adminPass === 'turbo2026') {
+                    setIsAdminAuthenticated(true);
+                } else {
+                    alert(isRtl ? 'رمز عبور اشتباه است (رمز نمونه: admin123)' : 'Wrong Password (Demo pass: admin123)');
+                }
+            };
+
+            return (
+                <div className={`min-h-screen ${isRtl ? 'font-vazir' : 'font-inter'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+
+                    {/* --- ANNOUNCEMENT BAR --- */}
+                    {announcement.enabled && (
+                        <div className="bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-purple/20 border-b border-cyber-cyan/30 text-xs sm:text-sm py-2.5 px-4 text-center relative z-50 flex items-center justify-center gap-2">
+                            <span>{isRtl ? announcement.textFa : announcement.textEn}</span>
+                            <a href={announcement.link} target="_blank" rel="noreferrer" className="underline font-bold text-cyber-cyan hover:text-white transition">
+                                {isRtl ? 'عضویت در کانال' : 'Join Channel'} &rarr;
+                            </a>
+                            <button onClick={() => setAnnouncement({...announcement, enabled: false})} className={`absolute ${isRtl ? 'left-3' : 'right-3'} text-gray-400 hover:text-white`}>
+                                ✕
+                            </button>
+                        </div>
+                    )}
+
+                    {/* --- HEADER / NAVIGATION --- */}
+                    <header className="sticky top-0 z-40 glass-nav transition-all duration-300">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                            
+                            {/* Brand Logo */}
+                            <div className="flex items-center gap-3">
+                                <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyber-blue to-cyber-cyan p-0.5 glow-box-cyan flex items-center justify-center">
+                                    <div className="w-full h-full bg-dark-base rounded-[10px] flex items-center justify-center">
+                                        {/* Cyber Shield & Thunderbolt Icon */}
+                                        <svg className="w-6 h-6 text-cyber-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span className="text-2xl font-black tracking-wider text-white flex items-center gap-1">
+                                        Turbo<span className="text-cyber-cyan">VPN</span>
+                                    </span>
+                                    <span className="text-[10px] block text-gray-400 -mt-1 tracking-widest uppercase">
+                                        @turbovpn10
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Desktop Nav Items */}
+                            <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                                <a href="#hero" className="hover:text-cyber-cyan transition-colors">{isRtl ? 'خانه' : 'Home'}</a>
+                                <a href="#about" className="hover:text-cyber-cyan transition-colors">{isRtl ? 'درباره ما' : 'About'}</a>
+                                <a href="#vpns" className="hover:text-cyber-cyan transition-colors">{isRtl ? 'VPNها' : 'VPN Services'}</a>
+                                <a href="#tutorials" className="hover:text-cyber-cyan transition-colors">{isRtl ? 'آموزش‌ها' : 'Tutorials'}</a>
+                                <a href="#trouble" className="hover:text-cyber-cyan transition-colors">{isRtl ? 'عیب‌یابی' : 'Troubleshooting'}</a>
+                                <a href="#posts" className="hover:text-cyber-cyan transition-colors">{isRtl ? 'مطالب کانال' : 'Posts'}</a>
+                            </nav>
+
+                            {/* Header Actions */}
+                            <div className="flex items-center gap-3">
+                                {/* Language Switcher */}
+                                <button 
+                                    onClick={() => setLang(lang === 'fa' ? 'en' : 'fa')}
+                                    className="px-3 py-1.5 rounded-lg border border-cyber-border bg-dark-card text-xs font-semibold hover:border-cyber-cyan text-gray-300 transition flex items-center gap-1.5"
+                                >
+                                    <span>🌐</span>
+                                    <span>{lang === 'fa' ? 'English' : 'فارسی'}</span>
+                                </button>
+
+                                {/* Admin Panel Toggle Button */}
+                                <button 
+                                    onClick={() => setAdminOpen(true)}
+                                    className="p-2 rounded-lg border border-cyber-border bg-dark-card hover:bg-dark-border text-gray-300 transition"
+                                    title={isRtl ? 'پنل مدیریت' : 'Admin Panel'}
+                                >
+                                    <svg className="w-5 h-5 text-cyber-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+
+                                {/* Main Telegram CTA */}
+                                <a 
+                                    href="https://t.me/turbovpn10" 
+                                    target="_blank" 
+                                    rel="noreferrer"
+                                    className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-blue text-dark-base font-bold text-sm hover:opacity-90 transition glow-box-cyan"
+                                >
+                                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-2.02 9.51c-.15.68-.56.84-1.13.53l-3.1-2.28-1.5 1.44c-.17.17-.31.31-.63.31l.22-3.17 5.77-5.21c.25-.22-.05-.35-.39-.12l-7.14 4.49-3.07-.96c-.67-.21-.68-.67.14-.99l12.01-4.63c.56-.2 1.05.14.84.88z"/>
+                                    </svg>
+                                    <span>{isRtl ? 'ورود به تلگرام' : 'Join Telegram'}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+                    {/* --- HERO SECTION --- */}
+                    <section id="hero" className="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+                        {/* Background Cyber Grid Graphic */}
+                        <div className="absolute inset-0 bg-[radial-gradient(#1f2d4d_1px,transparent_1px)] [background-size:32px_32px] opacity-30"></div>
+                        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyber-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                                
+                                {/* Hero Left / Right Content */}
+                                <div className="lg:col-span-7 text-center lg:text-start space-y-6">
+                                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyber-cyan/30 bg-cyber-cyan/10 text-cyber-cyan text-xs font-bold tracking-wide">
+                                        <span className="w-2 h-2 rounded-full bg-cyber-cyan animate-ping"></span>
+                                        <span>OFFICIAL PLATFORM @TURBOVPN10</span>
+                                    </div>
+
+                                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white">
+                                        {isRtl ? heroConfig.titleFa : heroConfig.titleEn}
+                                    </h1>
+
+                                    <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                                        {isRtl ? heroConfig.subFa : heroConfig.subEn}
+                                    </p>
+
+                                    {/* Action Buttons */}
+                                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                                        <a 
+                                            href="https://t.me/turbovpn10" 
+                                            target="_blank" 
+                                            rel="noreferrer"
+                                            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple text-dark-base font-extrabold text-base hover:shadow-lg hover:shadow-cyber-cyan/30 transition-all text-center flex items-center justify-center gap-3"
+                                        >
+                                            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                                <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-2.02 9.51c-.15.68-.56.84-1.13.53l-3.1-2.28-1.5 1.44c-.17.17-.31.31-.63.31l.22-3.17 5.77-5.21c.25-.22-.05-.35-.39-.12l-7.14 4.49-3.07-.96c-.67-.21-.68-.67.14-.99l12.01-4.63c.56-.2 1.05.14.84.88z"/>
+                                            </svg>
+                                            <span>{isRtl ? 'ورود به کانال تلگرام' : 'Join Telegram Channel'}</span>
+                                        </a>
+
+                                        <a 
+                                            href="#tutorials"
+                                            className="w-full sm:w-auto px-8 py-4 rounded-xl border border-cyber-border bg-dark-card hover:border-cyber-cyan text-white font-bold text-base transition text-center"
+                                        >
+                                            {isRtl ? 'مشاهده آموزش‌ها' : 'View Guides'}
+                                        </a>
+                                    </div>
+
+                                    {/* Feature Badges */}
+                                    <div className="pt-6 border-t border-cyber-border/40 grid grid-cols-3 gap-4 text-center lg:text-start">
+                                        <div>
+                                            <span className="block text-2xl font-black text-cyber-cyan">100%</span>
+                                            <span className="text-xs text-gray-400">{isRtl ? 'رایگان و تست‌شده' : 'Free & Tested'}</span>
+                                        </div>
+                                        <div>
+                                            <span className="block text-2xl font-black text-cyber-blue">24/7</span>
+                                            <span className="text-xs text-gray-400">{isRtl ? 'پایدار و بدون قطعی' : '24/7 Uptime'}</span>
+                                        </div>
+                                        <div>
+                                            <span className="block text-2xl font-black text-cyber-purple">AES-256</span>
+                                            <span className="text-xs text-gray-400">{isRtl ? 'رمزنگاری پیشرفته' : 'Encryption'}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Hero Dynamic Cyber Visual */}
+                                <div className="lg:col-span-5 relative flex justify-center">
+                                    <div className="w-full max-w-md aspect-square rounded-3xl glass-card p-6 relative overflow-hidden flex flex-col justify-between border-2 border-cyber-cyan/30 animate-float">
+                                        
+                                        {/* Animated Radar Circle */}
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-cyber-cyan/20 pointer-events-none flex items-center justify-center">
+                                            <div className="w-48 h-48 rounded-full border border-cyber-blue/30"></div>
+                                            <div className="w-32 h-32 rounded-full border border-cyber-purple/40"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-cyber-cyan/10 to-transparent animate-radar rounded-full"></div>
+                                        </div>
+
+                                        {/* Card Header Status */}
+                                        <div className="flex items-center justify-between z-10">
+                                            <div className="flex items-center gap-2">
+                                                <span className="w-3 h-3 rounded-full bg-cyber-emerald animate-pulse"></span>
+                                                <span className="text-xs font-mono font-bold text-cyber-emerald">SYSTEM ACTIVE</span>
+                                            </div>
+                                            <span className="text-xs font-mono text-gray-400">PROXY ENGINE v4.2</span>
+                                        </div>
+
+                                        {/* Center Shield Graphic */}
+                                        <div className="my-auto text-center z-10 py-6">
+                                            <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-tr from-cyber-cyan to-cyber-purple p-0.5 glow-box-cyan mb-4">
+                                                <div className="w-full h-full bg-dark-base rounded-[14px] flex items-center justify-center">
+                                                    <svg className="w-10 h-10 text-cyber-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <span className="text-lg font-bold text-white block">SECURE ENCRYPTION</span>
+                                            <span className="text-xs text-cyber-cyan font-mono">ENCRYPTED TUNNEL ACTIVE</span>
+                                        </div>
+
+                                        {/* Dynamic Interactive Ping Metric */}
+                                        <div className="z-10 bg-dark-surface/80 rounded-xl p-3 border border-cyber-border flex items-center justify-between text-xs font-mono">
+                                            <div>
+                                                <span className="text-gray-400 block">{isRtl ? 'تاخیر (Ping):' : 'Latency:'}</span>
+                                                <span className="text-cyber-cyan font-bold">{pingState.latency} ms</span>
+                                            </div>
+                                            <div>
+                                                <span className="text-gray-400 block">{isRtl ? 'دانلود:' : 'Speed:'}</span>
+                                                <span className="text-cyber-emerald font-bold">{pingState.download} Mbps</span>
+                                            </div>
+                                            <button 
+                                                onClick={runSpeedTest} 
+                                                disabled={isTestingSpeed}
+                                                className="px-2.5 py-1 rounded bg-cyber-blue/20 hover:bg-cyber-blue/40 text-cyber-blue font-bold border border-cyber-blue/40 transition"
+                                            >
+                                                {isTestingSpeed ? '...' : (isRtl ? 'تست پینگ' : 'Test')}
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 10: CONNECTION STATUS DASHBOARD --- */}
+                    <section className="py-10 bg-dark-surface/50 border-y border-cyber-border/40">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="text-center mb-6">
+                                <span className="text-xs font-bold font-mono text-cyber-cyan tracking-wider uppercase">
+                                    [ DEMO METRICS / VISUALIZATION DASHBOARD ]
+                                </span>
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div className="glass-card p-4 rounded-xl text-center">
+                                    <span className="text-xs text-gray-400 block mb-1">{isRtl ? 'وضعیت شبکه' : 'Connection Status'}</span>
+                                    <span className="text-lg font-bold text-cyber-emerald flex items-center justify-center gap-1.5">
+                                        <span className="w-2.5 h-2.5 rounded-full bg-cyber-emerald animate-pulse"></span>
+                                        CONNECTED
+                                    </span>
+                                </div>
+                                <div className="glass-card p-4 rounded-xl text-center">
+                                    <span className="text-xs text-gray-400 block mb-1">{isRtl ? 'امنیت کانال' : 'Security Mode'}</span>
+                                    <span className="text-lg font-bold text-cyber-cyan">PROTECTED</span>
+                                </div>
+                                <div className="glass-card p-4 rounded-xl text-center">
+                                    <span className="text-xs text-gray-400 block mb-1">{isRtl ? 'سرعت دانلود' : 'Download Bandwidth'}</span>
+                                    <span className="text-lg font-bold text-white font-mono">{pingState.download} Mbps</span>
+                                </div>
+                                <div className="glass-card p-4 rounded-xl text-center">
+                                    <span className="text-xs text-gray-400 block mb-1">{isRtl ? 'سرعت آپلود' : 'Upload Speed'}</span>
+                                    <span className="text-lg font-bold text-white font-mono">{pingState.upload} Mbps</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 4: CHANNEL INTRODUCTION / ABOUT --- */}
+                    <section id="about" className="py-20 relative">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            
+                            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                                <h2 className="text-2xl sm:text-4xl font-black text-white">
+                                    {isRtl ? 'درباره TurboVPN' : 'About TurboVPN'}
+                                </h2>
+                                <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                                    {isRtl ? 
+                                        'به کانال رسمی TurboVPN خوش آمدید. در TurboVPN جدیدترین ابزارها، VPNهای پرسرعت و تست‌شده، آموزش‌های اتصال و نکات کاربردی مربوط به امنیت و دسترسی پایدار به اینترنت را دنبال کنید.' :
+                                        'Welcome to the official TurboVPN website. Follow us for the latest tools, high-speed tested VPN configs, connection tutorials, and privacy insights.'
+                                    }
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {/* Card 1: Security */}
+                                <div className="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1 transition duration-300">
+                                    <div className="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-2xl">
+                                        🔐
+                                    </div>
+                                    <h3 className="text-lg font-bold text-white">{isRtl ? 'امنیت' : 'Security'}</h3>
+                                    <p className="text-xs text-gray-400 leading-relaxed">
+                                        {isRtl ? 'تمرکز بر امنیت و حفظ حریم خصوصی هنگام اتصال با پروتکل‌های پیشرفته.' : 'Focusing on strict privacy and data protection through next-gen protocols.'}
+                                    </p>
+                                </div>
+
+                                {/* Card 2: Speed */}
+                                <div className="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1 transition duration-300">
+                                    <div className="w-12 h-12 rounded-xl bg-cyber-blue/10 border border-cyber-blue/30 flex items-center justify-center text-cyber-blue text-2xl">
+                                        ⚡
+                                    </div>
+                                    <h3 className="text-lg font-bold text-white">{isRtl ? 'سرعت' : 'High Speed'}</h3>
+                                    <p className="text-xs text-gray-400 leading-relaxed">
+                                        {isRtl ? 'معرفی و بررسی ابزارها و VPNهای پرسرعت با کمترین پینگ ممکن.' : 'Curating ultra-fast VPN tools with optimal low-latency routing.'}
+                                    </p>
+                                </div>
+
+                                {/* Card 3: Free Access */}
+                                <div className="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1 transition duration-300">
+                                    <div className="w-12 h-12 rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-2xl">
+                                        🌍
+                                    </div>
+                                    <h3 className="text-lg font-bold text-white">{isRtl ? 'دسترسی آزاد' : 'Unrestricted Access'}</h3>
+                                    <p className="text-xs text-gray-400 leading-relaxed">
+                                        {isRtl ? 'راهکارها و آموزش‌های مرتبط با دسترسی پایدار و بدون محدودیت به اینترنت.' : 'Reliable methods and solutions for stable open web access.'}
+                                    </p>
+                                </div>
+
+                                {/* Card 4: Multiplatform */}
+                                <div className="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1 transition duration-300">
+                                    <div className="w-12 h-12 rounded-xl bg-cyber-emerald/10 border border-cyber-emerald/30 flex items-center justify-center text-cyber-emerald text-2xl">
+                                        📱
+                                    </div>
+                                    <h3 className="text-lg font-bold text-white">{isRtl ? 'چند پلتفرمی' : 'Multi-Platform'}</h3>
+                                    <p className="text-xs text-gray-400 leading-relaxed">
+                                        {isRtl ? 'آموزش اتصال کامل برای سیستم‌عامل‌های Android، iPhone و Windows.' : 'Comprehensive setup guides tailored for Android, iOS, and Windows.'}
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 5: PLATFORM GUIDES --- */}
+                    <section className="py-20 bg-dark-surface/40 relative">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="text-center mb-16">
+                                <h2 className="text-2xl sm:text-4xl font-black text-white">
+                                    {isRtl ? 'آموزش اتصال برای همه دستگاه‌ها' : 'Connection Guides for All Platforms'}
+                                </h2>
+                                <p className="text-gray-400 text-sm mt-2">
+                                    {isRtl ? 'پلتفرم مورد نظر خود را انتخاب کنید' : 'Select your target operating system'}
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {/* Android */}
+                                <div className="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-6">
+                                    <div>
+                                        <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-2xl mb-4">
+                                            🤖
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-2">Android</h3>
+                                        <ul className="text-xs text-gray-400 space-y-2">
+                                            <li>• Android VPN Guides</li>
+                                            <li>• Connection tutorials</li>
+                                            <li>• Troubleshooting steps</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#tutorials" onClick={() => setSelectedTutPlatform('android')} className="w-full py-2.5 rounded-xl border border-cyber-border bg-dark-card hover:border-cyber-cyan text-xs font-bold text-cyber-cyan text-center transition">
+                                        {isRtl ? 'مشاهده آموزش' : 'View Tutorials'}
+                                    </a>
+                                </div>
+
+                                {/* iPhone */}
+                                <div className="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-6">
+                                    <div>
+                                        <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-2xl mb-4">
+                                            🍏
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-2">iPhone (iOS)</h3>
+                                        <ul className="text-xs text-gray-400 space-y-2">
+                                            <li>• iOS connection guides</li>
+                                            <li>• Recommended apps</li>
+                                            <li>• Troubleshooting</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#tutorials" onClick={() => setSelectedTutPlatform('iphone')} className="w-full py-2.5 rounded-xl border border-cyber-border bg-dark-card hover:border-cyber-cyan text-xs font-bold text-cyber-cyan text-center transition">
+                                        {isRtl ? 'مشاهده آموزش' : 'View Tutorials'}
+                                    </a>
+                                </div>
+
+                                {/* Windows */}
+                                <div className="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-6">
+                                    <div>
+                                        <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-4">
+                                            💻
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-2">Windows</h3>
+                                        <ul className="text-xs text-gray-400 space-y-2">
+                                            <li>• Windows VPN guides</li>
+                                            <li>• Connection setup</li>
+                                            <li>• Troubleshooting</li>
+                                        </ul>
+                                    </div>
+                                    <a href="#tutorials" onClick={() => setSelectedTutPlatform('windows')} className="w-full py-2.5 rounded-xl border border-cyber-border bg-dark-card hover:border-cyber-cyan text-xs font-bold text-cyber-cyan text-center transition">
+                                        {isRtl ? 'مشاهده آموزش' : 'View Tutorials'}
+                                    </a>
+                                </div>
+
+                                {/* Other Devices */}
+                                <div className="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-6 border-dashed">
+                                    <div>
+                                        <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-4">
+                                            🌐
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-2">{isRtl ? 'سایر دستگاه‌ها' : 'Other Platforms'}</h3>
+                                        <ul className="text-xs text-gray-400 space-y-2">
+                                            <li>• macOS & Linux</li>
+                                            <li>• Router Configs</li>
+                                            <li>• Android TV / Smart TV</li>
+                                        </ul>
+                                    </div>
+                                    <a href="https://t.me/turbovpn10" target="_blank" rel="noreferrer" className="w-full py-2.5 rounded-xl border border-cyber-border bg-dark-card hover:border-cyber-cyan text-xs font-bold text-gray-300 text-center transition">
+                                        {isRtl ? 'درخواست کانفیگ' : 'Request Support'}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 6: VPN RECOMMENDATIONS --- */}
+                    <section id="vpns" className="py-20 relative">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                                <div>
+                                    <h2 className="text-2xl sm:text-4xl font-black text-white">
+                                        {isRtl ? 'VPNهای پیشنهادی و تست‌شده' : 'Recommended & Tested Services'}
+                                    </h2>
+                                    <p className="text-xs font-mono text-cyber-cyan mt-2">
+                                        ⚠️ [EDITABLE DEMO DATA - NO FAKE STATS DISPLAYED]
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {vpns.map(vpn => (
+                                    <div key={vpn.id} className="glass-card p-6 rounded-2xl space-y-6 flex flex-col justify-between relative overflow-hidden">
+                                        <div>
+                                            <div className="flex items-center justify-between mb-4">
+                                                <h3 className="text-xl font-black text-white">{vpn.name}</h3>
+                                                <span className={`text-[10px] px-2.5 py-1 rounded-full font-bold border ${
+                                                    vpn.statusColor === 'emerald' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' :
+                                                    vpn.statusColor === 'amber' ? 'bg-amber-500/10 text-amber-400 border-amber-500/30' :
+                                                    'bg-rose-500/10 text-rose-400 border-rose-500/30'
+                                                }`}>
+                                                    {isRtl ? vpn.status : vpn.statusEn}
+                                                </span>
+                                            </div>
+
+                                            <p className="text-xs text-gray-400 leading-relaxed mb-6">
+                                                {isRtl ? vpn.descFa : vpn.descEn}
+                                            </p>
+
+                                            <div className="space-y-3 pt-4 border-t border-cyber-border/40 text-xs">
+                                                <div className="flex justify-between">
+                                                    <span className="text-gray-400">{isRtl ? 'سازگاری:' : 'Platforms:'}</span>
+                                                    <span className="text-white font-mono">{vpn.platforms.join(', ')}</span>
+                                                </div>
+                                                <div className="flex justify-between">
+                                                    <span className="text-gray-400">{isRtl ? 'شاخص سرعت:' : 'Speed Index:'}</span>
+                                                    <span className="text-cyber-cyan font-bold font-mono">{vpn.speedRating}</span>
+                                                </div>
+                                                <div className="flex justify-between">
+                                                    <span className="text-gray-400">{isRtl ? 'آخرین تست:' : 'Last Tested:'}</span>
+                                                    <span className="text-gray-300 font-mono">{isRtl ? vpn.lastTested : vpn.lastTestedEn}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <a href="https://t.me/turbovpn10" target="_blank" rel="noreferrer" className="w-full py-3 rounded-xl bg-cyber-blue/20 hover:bg-cyber-blue/40 border border-cyber-blue/40 text-cyber-cyan text-xs font-bold text-center transition block">
+                                            {isRtl ? 'آموزش اتصال و دریافت' : 'Get Connection Info'}
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 8: TUTORIAL CENTER WITH SEARCH --- */}
+                    <section id="tutorials" className="py-20 bg-dark-surface/50 border-t border-cyber-border/30">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            
+                            <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
+                                <h2 className="text-2xl sm:text-4xl font-black text-white">
+                                    {isRtl ? 'مرکز آموزش TurboVPN' : 'TurboVPN Knowledge Base'}
+                                </h2>
+                                <p className="text-gray-400 text-sm">
+                                    {isRtl ? 'جستجو در بین تمامی آموزش‌های اتصال و عیب‌یابی' : 'Search connection guides and setup step-by-steps'}
+                                </p>
+
+                                {/* Search Bar */}
+                                <div className="relative max-w-md mx-auto pt-2">
+                                    <input 
+                                        type="text" 
+                                        placeholder={isRtl ? 'جستجو در آموزش‌ها...' : 'Search tutorials...'}
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        className="w-full py-3 px-10 rounded-xl bg-dark-card border border-cyber-border text-white text-sm focus:outline-none focus:border-cyber-cyan transition"
+                                    />
+                                    <span className={`absolute top-5 ${isRtl ? 'right-3' : 'left-3'} text-gray-400 text-sm`}>🔍</span>
+                                </div>
+
+                                {/* Platform Category Filter Buttons */}
+                                <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
+                                    {['all', 'android', 'iphone', 'windows'].map(plat => (
+                                        <button 
+                                            key={plat}
+                                            onClick={() => setSelectedTutPlatform(plat)}
+                                            className={`px-4 py-1.5 rounded-lg text-xs font-bold capitalize transition ${
+                                                selectedTutPlatform === plat 
+                                                ? 'bg-cyber-cyan text-dark-base' 
+                                                : 'bg-dark-card border border-cyber-border text-gray-300 hover:border-cyber-cyan'
+                                            }`}
+                                        >
+                                            {plat}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Tutorials List */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {filteredTutorials.map(tut => (
+                                    <div key={tut.id} className="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4 hover:border-cyber-cyan transition">
+                                        <div>
+                                            <div className="flex items-center justify-between text-[11px] text-gray-400 mb-2">
+                                                <span className="uppercase font-mono text-cyber-cyan">{tut.platform}</span>
+                                                <span>⏱️ {isRtl ? tut.readTime : tut.readTimeEn}</span>
+                                            </div>
+                                            <h3 className="text-lg font-bold text-white mb-2">
+                                                {isRtl ? tut.titleFa : tut.titleEn}
+                                            </h3>
+                                        </div>
+
+                                        <button 
+                                            onClick={() => setSelectedTut(tut)}
+                                            className="w-full py-2.5 rounded-xl bg-dark-card border border-cyber-border hover:border-cyber-cyan text-xs font-bold text-gray-200 transition"
+                                        >
+                                            {isRtl ? 'مشاهده مراحل کامل' : 'Read Full Steps'}
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 9: TROUBLESHOOTING WIZARD --- */}
+                    <section id="trouble" className="py-20 relative">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="text-center max-w-2xl mx-auto mb-12">
+                                <h2 className="text-2xl sm:text-4xl font-black text-white">
+                                    {isRtl ? 'مشکل اتصال دارید؟' : 'Connection Troubleshooting'}
+                                </h2>
+                                <p className="text-gray-400 text-sm mt-2">
+                                    {isRtl ? 'مشکل رایج خود را انتخاب کنید تا راهکار سریع آن را ببینید' : 'Select your connection issue to inspect step-by-step resolution'}
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                {/* Issue Buttons Column */}
+                                <div className="lg:col-span-5 space-y-3">
+                                    {TROUBLESHOOTING_ISSUES.map(item => (
+                                        <button
+                                            key={item.id}
+                                            onClick={() => setActiveProblem(item)}
+                                            className={`w-full p-4 rounded-xl text-start transition border flex items-center justify-between ${
+                                                activeProblem.id === item.id 
+                                                ? 'bg-cyber-cyan/10 border-cyber-cyan text-white glow-box-cyan'
+                                                : 'glass-card border-cyber-border text-gray-300 hover:border-gray-500'
+                                            }`}
+                                        >
+                                            <span className="font-bold text-sm">{isRtl ? item.problemFa : item.problemEn}</span>
+                                            <span className="text-cyber-cyan">&rarr;</span>
+                                        </button>
+                                    ))}
+                                </div>
+
+                                {/* Active Resolution Panel */}
+                                <div className="lg:col-span-7 glass-card p-6 sm:p-8 rounded-2xl border-2 border-cyber-cyan/30 space-y-6">
+                                    <div className="flex items-center gap-3 border-b border-cyber-border pb-4">
+                                        <div className="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-lg">
+                                            ⚠️
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold text-white">
+                                                {isRtl ? activeProblem.problemFa : activeProblem.problemEn}
+                                            </h3>
+                                            <span className="text-xs text-gray-400 font-mono">DIAGNOSTIC & FIX</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <div>
+                                            <span className="text-xs text-cyber-cyan font-bold uppercase block mb-1">
+                                                {isRtl ? 'علت احتمالی:' : 'Possible Cause:'}
+                                            </span>
+                                            <p className="text-sm text-gray-300 bg-dark-card p-3 rounded-lg border border-cyber-border">
+                                                {isRtl ? activeProblem.causeFa : activeProblem.causeEn}
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <span className="text-xs text-cyber-emerald font-bold uppercase block mb-1">
+                                                {isRtl ? 'راهکار پیشنهادی:' : 'Recommended Fix:'}
+                                            </span>
+                                            <p className="text-sm text-gray-200 leading-relaxed bg-dark-card p-4 rounded-lg border border-cyber-border">
+                                                {isRtl ? activeProblem.solutionFa : activeProblem.solutionEn}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="pt-2 flex gap-4">
+                                        <a 
+                                            href="https://t.me/turbovpn10" 
+                                            target="_blank" 
+                                            rel="noreferrer"
+                                            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-blue text-dark-base font-bold text-xs hover:opacity-90 transition"
+                                        >
+                                            {isRtl ? 'پشتیبانی در تلگرام' : 'Telegram Support'}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 7: LATEST POSTS --- */}
+                    <section id="posts" className="py-20 bg-dark-surface/40">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 gap-4">
+                                <div>
+                                    <h2 className="text-2xl sm:text-4xl font-black text-white">
+                                        {isRtl ? 'آخرین مطالب کانال' : 'Latest Channel Posts'}
+                                    </h2>
+                                    <p className="text-gray-400 text-sm mt-1">
+                                        {isRtl ? 'مستقیماً همگام‌سازی شده با کانال تلگرام @turbovpn10' : 'Synced directly with official Telegram feed'}
+                                    </p>
+                                </div>
+
+                                <a href="https://t.me/turbovpn10" target="_blank" rel="noreferrer" className="text-xs font-bold text-cyber-cyan hover:underline flex items-center gap-1">
+                                    <span>{isRtl ? 'مشاهده همه پست‌ها' : 'View All Posts'}</span>
+                                    <span>&rarr;</span>
+                                </a>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {posts.map(post => (
+                                    <article key={post.id} className="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 hover:-translate-y-1 transition duration-300">
+                                        <div className="space-y-3">
+                                            <div className="flex items-center justify-between text-xs">
+                                                <span className="px-2.5 py-1 rounded-md bg-cyber-cyan/10 text-cyber-cyan font-bold border border-cyber-cyan/20">
+                                                    {isRtl ? post.category : post.categoryEn}
+                                                </span>
+                                                <span className="text-gray-400 font-mono">{post.date}</span>
+                                            </div>
+
+                                            <h3 className="text-lg font-bold text-white leading-snug">
+                                                {isRtl ? post.title : post.titleEn}
+                                            </h3>
+
+                                            <p className="text-xs text-gray-400 leading-relaxed">
+                                                {isRtl ? post.desc : post.descEn}
+                                            </p>
+                                        </div>
+
+                                        <a 
+                                            href={post.telegramUrl} 
+                                            target="_blank" 
+                                            rel="noreferrer"
+                                            className="w-full py-2.5 rounded-xl border border-cyber-border bg-dark-card hover:bg-cyber-blue/20 hover:border-cyber-blue text-xs font-bold text-cyber-cyan text-center transition flex items-center justify-center gap-2"
+                                        >
+                                            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-2.02 9.51c-.15.68-.56.84-1.13.53l-3.1-2.28-1.5 1.44c-.17.17-.31.31-.63.31l.22-3.17 5.77-5.21c.25-.22-.05-.35-.39-.12l-7.14 4.49-3.07-.96c-.67-.21-.68-.67.14-.99l12.01-4.63c.56-.2 1.05.14.84.88z"/>
+                                            </svg>
+                                            <span>{isRtl ? 'مشاهده در تلگرام' : 'View on Telegram'}</span>
+                                        </a>
+                                    </article>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 11: TELEGRAM CTA BANNER --- */}
+                    <section className="py-20 relative">
+                        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div className="rounded-3xl bg-gradient-to-r from-cyber-blue/30 via-cyber-cyan/20 to-cyber-purple/30 border-2 border-cyber-cyan/40 p-8 sm:p-12 text-center space-y-6 relative overflow-hidden glow-box-cyan">
+                                
+                                <div className="w-16 h-16 mx-auto rounded-2xl bg-cyber-cyan text-dark-base flex items-center justify-center font-black text-3xl shadow-lg">
+                                    ⚡
+                                </div>
+
+                                <h2 className="text-2xl sm:text-4xl font-black text-white">
+                                    {isRtl ? 'جدیدترین آموزش‌ها و ابزارها را از دست ندهید' : 'Never Miss New Tools & Guides'}
+                                </h2>
+
+                                <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                                    {isRtl ? 
+                                        'برای دریافت جدیدترین اخبار، آموزش‌ها، VPNهای پیشنهادی و اطلاعیه‌های TurboVPN به کانال تلگرام ما بپیوندید.' :
+                                        'Join our official Telegram community to receive daily updates, bypass guides, and verified tools.'
+                                    }
+                                </p>
+
+                                <div>
+                                    <a 
+                                        href="https://t.me/turbovpn10" 
+                                        target="_blank" 
+                                        rel="noreferrer"
+                                        className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-cyber-cyan text-dark-base font-black text-base hover:bg-white transition"
+                                    >
+                                        <span>{isRtl ? 'عضویت در کانال تلگرام (@turbovpn10)' : 'Join Channel (@turbovpn10)'}</span>
+                                        <span>&rarr;</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* --- SECTION 19: FOOTER --- */}
+                    <footer className="border-t border-cyber-border/40 py-12 bg-dark-base text-xs text-gray-400">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                            
+                            <div className="space-y-3">
+                                <span className="text-xl font-black text-white block">Turbo<span className="text-cyber-cyan">VPN</span></span>
+                                <p className="leading-relaxed">
+                                    {isRtl ? '«اتصال سریع، امن و بدون محدودیت»' : 'Fast, Secure & Unrestricted Connection'}
+                                </p>
+                                <span className="text-cyber-cyan font-mono block">@turbovpn10</span>
+                            </div>
+
+                            <div>
+                                <h4 className="font-bold text-white mb-3">{isRtl ? 'دسترسی سریع' : 'Quick Links'}</h4>
+                                <ul className="space-y-2">
+                                    <li><a href="#hero" className="hover:text-cyber-cyan">{isRtl ? 'خانه' : 'Home'}</a></li>
+                                    <li><a href="#vpns" className="hover:text-cyber-cyan">{isRtl ? 'VPNها' : 'VPNs'}</a></li>
+                                    <li><a href="#tutorials" className="hover:text-cyber-cyan">{isRtl ? 'آموزش‌ها' : 'Tutorials'}</a></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 className="font-bold text-white mb-3">{isRtl ? 'پلتفرم‌ها' : 'Platforms'}</h4>
+                                <ul className="space-y-2">
+                                    <li><a href="#tutorials" onClick={() => setSelectedTutPlatform('android')} className="hover:text-cyber-cyan">Android</a></li>
+                                    <li><a href="#tutorials" onClick={() => setSelectedTutPlatform('iphone')} className="hover:text-cyber-cyan">iPhone (iOS)</a></li>
+                                    <li><a href="#tutorials" onClick={() => setSelectedTutPlatform('windows')} className="hover:text-cyber-cyan">Windows</a></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 className="font-bold text-white mb-3">{isRtl ? 'حریم خصوصی و امنیت' : 'Security & Privacy'}</h4>
+                                <p className="leading-relaxed mb-3">
+                                    {isRtl ? 'تمامی مطالب و ابزارها صرفاً جهت آموزش حفظ امنیت و آزادی اطلاعات منتشر می‌شوند.' : 'All materials provided strictly for security educational purposes.'}
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-cyber-border/30 text-center">
+                            © 2026 TurboVPN. All rights reserved. Designed for official Telegram channel @turbovpn10.
+                        </div>
+                    </footer>
+
+                    {/* --- SECTION 17: MOBILE BOTTOM NAVIGATION BAR --- */}
+                    <div className="md:hidden fixed bottom-0 left-0 right-0 glass-nav border-t border-cyber-border z-40 px-2 py-2 flex items-center justify-around text-[10px]">
+                        <a href="#hero" className="flex flex-col items-center gap-1 text-gray-300 hover:text-cyber-cyan">
+                            <span>🏠</span>
+                            <span>{isRtl ? 'خانه' : 'Home'}</span>
+                        </a>
+                        <a href="#tutorials" className="flex flex-col items-center gap-1 text-gray-300 hover:text-cyber-cyan">
+                            <span>📚</span>
+                            <span>{isRtl ? 'آموزش‌ها' : 'Guides'}</span>
+                        </a>
+                        
+                        {/* Telegram Center Highlight */}
+                        <a href="https://t.me/turbovpn10" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 text-cyber-cyan font-bold -mt-4 bg-dark-base p-2 rounded-full border border-cyber-cyan shadow-lg">
+                            <span className="text-base">⚡</span>
+                        </a>
+
+                        <a href="#vpns" className="flex flex-col items-center gap-1 text-gray-300 hover:text-cyber-cyan">
+                            <span>🛡️</span>
+                            <span>{isRtl ? 'VPNها' : 'VPNs'}</span>
+                        </a>
+                        <a href="#posts" className="flex flex-col items-center gap-1 text-gray-300 hover:text-cyber-cyan">
+                            <span>📰</span>
+                            <span>{isRtl ? 'مطالب' : 'Posts'}</span>
+                        </a>
+                    </div>
+
+                    {/* --- TUTORIAL DETAILS MODAL --- */}
+                    {selectedTut && (
+                        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+                            <div className="glass-card max-w-xl w-full p-6 sm:p-8 rounded-2xl border-2 border-cyber-cyan/40 space-y-6 max-h-[90vh] overflow-y-auto">
+                                <div className="flex items-center justify-between border-b border-cyber-border pb-4">
+                                    <h3 className="text-xl font-bold text-white">
+                                        {isRtl ? selectedTut.titleFa : selectedTut.titleEn}
+                                    </h3>
+                                    <button onClick={() => setSelectedTut(null)} className="text-gray-400 hover:text-white text-xl">✕</button>
+                                </div>
+
+                                <div className="space-y-4 text-sm">
+                                    <span className="text-xs text-cyber-cyan font-bold block">{isRtl ? 'مراحل اتصال:' : 'Step-by-step setup:'}</span>
+                                    <ol className="space-y-3 list-decimal list-inside text-gray-300 leading-relaxed">
+                                        {(isRtl ? selectedTut.stepsFa : selectedTut.stepsEn).map((step, idx) => (
+                                            <li key={idx} className="bg-dark-card p-3 rounded-xl border border-cyber-border">{step}</li>
+                                        ))}
+                                    </ol>
+                                </div>
+
+                                <button onClick={() => setSelectedTut(null)} className="w-full py-3 rounded-xl bg-cyber-cyan text-dark-base font-bold text-xs">
+                                    {isRtl ? 'متوجه شدم' : 'Close Tutorial'}
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* --- SECTION 13: ADMIN PANEL MODAL --- */}
+                    {adminOpen && (
+                        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+                            <div className="glass-card max-w-3xl w-full p-6 sm:p-8 rounded-2xl border-2 border-cyber-cyan/50 space-y-6 max-h-[90vh] overflow-y-auto">
+                                
+                                <div className="flex items-center justify-between border-b border-cyber-border pb-4">
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-xl">⚙️</span>
+                                        <h3 className="text-xl font-bold text-white">
+                                            {isRtl ? 'مدیریت سایت TurboVPN' : 'TurboVPN CMS Control Panel'}
+                                        </h3>
+                                    </div>
+                                    <button onClick={() => setAdminOpen(false)} className="text-gray-400 hover:text-white text-xl">✕</button>
+                                </div>
+
+                                {!isAdminAuthenticated ? (
+                                    <form onSubmit={handleAdminLogin} className="space-y-4 max-w-md mx-auto py-8">
+                                        <p className="text-xs text-gray-400 text-center">
+                                            {isRtl ? 'جهت ورود به سیستم مدیریت رمز عبور را وارد نمایید (رمز نمونه: admin123)' : 'Enter password to access admin system (Demo pass: admin123)'}
+                                        </p>
+                                        <input 
+                                            type="password"
+                                            placeholder="Pass: admin123"
+                                            value={adminPass}
+                                            onChange={(e) => setAdminPass(e.target.value)}
+                                            className="w-full p-3 rounded-xl bg-dark-card border border-cyber-border text-white text-sm focus:border-cyber-cyan outline-none"
+                                        />
+                                        <button type="submit" className="w-full py-3 rounded-xl bg-cyber-cyan text-dark-base font-bold text-sm">
+                                            {isRtl ? 'ورود به پنل' : 'Login'}
+                                        </button>
+                                    </form>
+                                ) : (
+                                    <div className="space-y-6">
+                                        {/* Admin Tabs */}
+                                        <div className="flex border-b border-cyber-border gap-4 text-xs font-bold">
+                                            <button 
+                                                onClick={() => setAdminTab('overview')}
+                                                className={`pb-3 ${adminTab === 'overview' ? 'text-cyber-cyan border-b-2 border-cyber-cyan' : 'text-gray-400'}`}
+                                            >
+                                                {isRtl ? 'خلاصه وضعیت' : 'Overview'}
+                                            </button>
+                                            <button 
+                                                onClick={() => setAdminTab('hero')}
+                                                className={`pb-3 ${adminTab === 'hero' ? 'text-cyber-cyan border-b-2 border-cyber-cyan' : 'text-gray-400'}`}
+                                            >
+                                                {isRtl ? 'ویرایش هدر و متون' : 'Edit Hero'}
+                                            </button>
+                                            <button 
+                                                onClick={() => setAdminTab('posts')}
+                                                className={`pb-3 ${adminTab === 'posts' ? 'text-cyber-cyan border-b-2 border-cyber-cyan' : 'text-gray-400'}`}
+                                            >
+                                                {isRtl ? 'مدیریت پست‌ها' : 'Posts'}
+                                            </button>
+                                        </div>
+
+                                        {/* Tab Content: Overview */}
+                                        {adminTab === 'overview' && (
+                                            <div className="grid grid-cols-3 gap-4 text-center">
+                                                <div className="bg-dark-card p-4 rounded-xl border border-cyber-border">
+                                                    <span className="text-xs text-gray-400 block">{isRtl ? 'تعداد پست‌ها' : 'Total Posts'}</span>
+                                                    <span className="text-2xl font-bold text-cyber-cyan">{posts.length}</span>
+                                                </div>
+                                                <div className="bg-dark-card p-4 rounded-xl border border-cyber-border">
+                                                    <span className="text-xs text-gray-400 block">{isRtl ? 'آموزش‌ها' : 'Tutorials'}</span>
+                                                    <span className="text-2xl font-bold text-cyber-blue">{tutorials.length}</span>
+                                                </div>
+                                                <div className="bg-dark-card p-4 rounded-xl border border-cyber-border">
+                                                    <span className="text-xs text-gray-400 block">{isRtl ? 'کلیک تلگرام' : 'Telegram Clicks'}</span>
+                                                    <span className="text-2xl font-bold text-cyber-emerald">1.4k</span>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Tab Content: Edit Hero */}
+                                        {adminTab === 'hero' && (
+                                            <div className="space-y-4 text-xs">
+                                                <div>
+                                                    <label className="text-gray-400 block mb-1">{isRtl ? 'عنوان اصلی هیرو (فارسی):' : 'Hero Title (FA):'}</label>
+                                                    <input 
+                                                        type="text"
+                                                        value={heroConfig.titleFa}
+                                                        onChange={(e) => setHeroConfig({...heroConfig, titleFa: e.target.value})}
+                                                        className="w-full p-2.5 rounded-lg bg-dark-card border border-cyber-border text-white"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="text-gray-400 block mb-1">{isRtl ? 'زیرعنوان هیرو (فارسی):' : 'Hero Subtitle (FA):'}</label>
+                                                    <textarea 
+                                                        rows="2"
+                                                        value={heroConfig.subFa}
+                                                        onChange={(e) => setHeroConfig({...heroConfig, subFa: e.target.value})}
+                                                        className="w-full p-2.5 rounded-lg bg-dark-card border border-cyber-border text-white"
+                                                    />
+                                                </div>
+                                                <p className="text-cyber-emerald text-[11px]">✔️ تغییرات بلافاصله روی وب‌سایت اعمال می‌شوند.</p>
+                                            </div>
+                                        )}
+
+                                        {/* Tab Content: Posts */}
+                                        {adminTab === 'posts' && (
+                                            <div className="space-y-3 text-xs">
+                                                <button 
+                                                    onClick={() => {
+                                                        const newP = {
+                                                            id: Date.now(),
+                                                            title: "پست جدید مدیریت کانال",
+                                                            titleEn: "New Channel Update Post",
+                                                            category: "اخبار",
+                                                            categoryEn: "News",
+                                                            date: "هم‌اکنون",
+                                                            desc: "توضیحات پست افزوده‌شده از پنل مدیریت اختصاصی.",
+                                                            descEn: "Description added dynamically from admin CMS.",
+                                                            telegramUrl: "https://t.me/turbovpn10",
+                                                            views: "1"
+                                                        };
+                                                        setPosts([newP, ...posts]);
+                                                    }}
+                                                    className="px-4 py-2 rounded-lg bg-cyber-emerald text-dark-base font-bold mb-2"
+                                                >
+                                                    + {isRtl ? 'افزودن پست نمونه جدید' : 'Add Quick Demo Post'}
+                                                </button>
+                                                {posts.map(p => (
+                                                    <div key={p.id} className="flex justify-between items-center bg-dark-card p-3 rounded-lg border border-cyber-border">
+                                                        <span>{isRtl ? p.title : p.titleEn}</span>
+                                                        <button 
+                                                            onClick={() => setPosts(posts.filter(x => x.id !== p.id))}
+                                                            className="text-rose-400 font-bold"
+                                                        >
+                                                            {isRtl ? 'حذف' : 'Delete'}
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+
+                                    </div>
+                                )}
+
+                            </div>
+                        </div>
+                    )}
+
+                </div>
+            );
+        }
+
+        // Render application
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>
